@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+
+	<meta charset="utf-8"/>
+	<title>O$zczedzaj pieniądze</title>
+	
+	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-core.min.js"></script>
+      <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-pie.min.js"></script>
+	  <script type="text/javascript" src="timer.js"> </script>
+	<meta name="description" content="Blog na temat ciekawych publikacji z dziedziny filozofii. Omówienie wybranych tekstów najsłynniejszych autorów!"/>
+	<meta name="keywords" content="filozofia, książki, blog, przemyślenia"/>
+	
+	<meta http-equiv="X-Ua-Compatible" content="IE=edge,chrome=1"/>
+	
+	<link rel="stylesheet" href="main.css" type="text/css" />
+	<link href="https://fonts.googleapis.com/css2?family=Style+Script&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+	
+	
+
+	
+</head>
+
+<body onload="pokazWykres()">
+<script id="wykres">
+
+
+</script>
+<div id="container">
+
+<div id="title">
+<img  id="dollar" src="img/dolar.png"/>O$zczedzaj pieniądze
+</div>
+<div id="menu">  
+<div id="menuoption">  
+<ul>
+
+<li>
+<a href="menu_glowne.html">
+Menu Główne
+</a>
+</li>
+
+
+<li>
+<a href="dodaj_wydatek.html">
+Dodaj wydatek
+</a>
+</li>
+<li>
+<a href="przegladaj_bilans.html">
+Przeglądaj bilans
+</a>
+</li>
+</ul>
+<div style="clear:both;"></div>
+</div>
+</div>
+<div id="subtitle">
+Przeglądaj bilans
+</div>
+<div id="bilancePeriod">
+
+<label for="period">Podaj okres bilansu:</label>
+
+<select  id="period" onchange="changeDate(this)"  >
+  <option value="currentMonth" selected>Bieżący miesiąc</option>
+  <option value="previousMonth" >Poprzedni miesiąc</option>
+  <option value="currentYear">Bieżący rok</option>
+  <option value="unusual">Niestandardowy</option>
+</select>
+</div>
+
+<div id="balance">
+<div id="balance2">
+<div id='incomeTable'>Przychody<br/> 
+<table>
+<tr>
+<td>Data</td> 
+<td>Kwota</td> 
+<td>Typ</td> 
+</tr>
+<tr>
+<td>4</td> 
+<td>5</td> 
+<td>6</td>
+</tr>
+<tr>
+<td>7</td> 
+<td>8</td>
+ <td>9</td>
+ </tr>
+</table></div> <div id='expenseTable'>Wydatki<br/><table><tr><td>Data</td> <td>Kwota</td> <td>Typ</td> </tr><tr><td>4</td> <td>5</td> <td>6</td></tr><tr><td>7</td> <td>8</td> <td>9</td></tr></table>
+</div> <div style='clear:both;'></div>
+Uważaj, wpadasz w długi!
+</div>
+
+<div id="c"></div>
+</div>
+
+
+</div>
+
+
+
+
+</body>
+</html>

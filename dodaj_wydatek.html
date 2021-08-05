@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+
+	<meta charset="utf-8"/>
+	<title>O$zczedzaj pieniądze</title>
+	<script type="text/javascript" src="timer.js"> </script>
+	<meta name="description" content="Blog na temat ciekawych publikacji z dziedziny filozofii. Omówienie wybranych tekstów najsłynniejszych autorów!"/>
+	<meta name="keywords" content="filozofia, książki, blog, przemyślenia"/>
+	
+	<meta http-equiv="X-Ua-Compatible" content="IE=edge,chrome=1"/>
+	
+	<link rel="stylesheet" href="main.css" type="text/css" />
+	<link href="https://fonts.googleapis.com/css2?family=Style+Script&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+	
+	
+
+	
+</head>
+
+<body onload="pobierzDate();" >
+
+<div id="container">
+
+<div id="title">
+<img  id="dollar" src="img/dolar.png"/>O$zczedzaj pieniądze
+</div>
+<div id="menu">  
+<div id="menuoption">  
+<ul>
+
+<li>
+<a href="menu_glowne.html">
+Menu Główne
+</a>
+</li>
+
+
+<li>
+<a href="dodaj_wydatek.html">
+Dodaj wydatek
+</a>
+</li>
+<li>
+<a href="przegladaj_bilans.html">
+Przeglądaj bilans
+</a>
+</li>
+</ul>
+<div style="clear:both;"></div>
+</div>
+</div>
+<div id="subtitle">
+Dodaj wydatek
+</div>
+
+<div id="expence">
+
+<form>
+<div id="cattitle">
+Data</div><br/>    
+<input type="date" id="data"  ><br/>
+<br/>
+<div id="cattitle">
+Sposób płatności</div>
+<br/>
+<label><input type="radio" name="platnosc"/>Gotówka</label><br/>
+	<label><input type="radio" name="platnosc"/>Karta debetowa</label>		<br/>
+	<label><input type="radio" name="platnosc"/>Karta kredytowa</label>	<br/>
+	<br/>
+	<div id="cattitle">
+	Kategoria</div><br/>
+	<div id ="cat">
+<label><input type="radio" name="category"/>Jedzienie</label><br/>
+<label><input type="radio" name="category"/>Mieszkanie</label><br/>
+<label><input type="radio" name="category"/>Transport</label><br/>
+</div>
+<div id ="cat">
+<label><input type="radio" name="category"/>Telekomunikacja</label><br/>
+<label><input type="radio" name="category"/>Opieka zdrowotna</label><br/>
+<label><input type="radio" name="category"/>Ubranie</label><br/>
+</div>
+<div id ="cat">
+<label><input type="radio" name="category"/>Higiena</label><br/>
+<label><input type="radio" name="category"/>Dzieci</label><br/>
+<label><input type="radio" name="category"/>Rozrywka</label><br/>
+</div>
+<div id ="cat">
+<label><input type="radio" name="category"/>Wycieczka</label><br/>
+<label><input type="radio" name="category"/>Szkolenia</label><br/>
+<label><input type="radio" name="category"/>Ksiązki</label><br/>
+</div>
+<div id ="cat">
+<label><input type="radio" name="category"/>Oszczędności</label><br/>
+<label><input type="radio" name="category"/>Na złotą jesień, czyli emeryturę</label><br/>
+<label><input type="radio" name="category"/>Spłata długów</label><br/>
+</div>
+<div id ="cat">
+<label><input type="radio" name="category"/>Darowizna</label><br/>
+<label><input type="radio" name="category"id="Other"/><label for="Other">Inne <input type="text"  placeholder="wpisz jakie" onfocus="this.placeholder='wpisz jakie'" onblur="this.placeholder=''" /></label><br/>
+</div>
+<div style ="clear:both;"></div>
+	<input type="submit" value="Dodaj"/>	<input type="submit"value="Anuluj" />		
+			
+			
+			
+			</form>
+</div>
+</div>
+
+
+
+</body>
+</html>
