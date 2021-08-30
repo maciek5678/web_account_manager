@@ -1,17 +1,17 @@
 body
 {
-	margin: 0px;
-	background-image: url("img/z2.jpg");
-	color: #efefef;
 
-    font-size: 17px;
+	background-image: url("img/z2.jpg");
+	
+
 	font-family: 'Roboto', sans-serif;
 	
 }
 #title
 {
-	background-color: black;
-font-size: 40px;	
+	background-image:linear-gradient(#c6c6c6,#a2a2a2);
+
+font-size: 70px;	
 	margin-left:auto;
 	margin-right:auto;
 	text-align:center;
@@ -33,16 +33,14 @@ text-align:center;
 #container
 
 {
-	margin:0px;
-	padding:0px;
-	border:0px;
+
 	text-align:center;
 	
 }
 #menu
 {
 	
-background-color: #FF1010;
+background-image:linear-gradient(#a2a2a2,#828282);
 font-size: 0px;	
 margin-top:0px;
 	
@@ -56,8 +54,8 @@ margin-top:0px;
 {
 		background-color:white;
 		color:black;
-	width:300px;
-	padding:50px;
+	
+	padding-top:10px;
 	margin-left:auto;
 	margin-right:auto;
 	margin-top:100px;
@@ -66,14 +64,14 @@ margin-top:0px;
 	box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
 	border-radius:20px;
 
-
+text-align:center;
 	
 }
 #expence
 {
 		background-color:white;
 		color:black;
-	width:1000px;
+
 	padding:50px;
 	margin-left:auto;
 	margin-right:auto;
@@ -82,16 +80,16 @@ margin-top:0px;
 	-moz-box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
 	box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
 	border-radius:20px;
+display: inline-block;
+	text-align: center;
 
-	
 }
 
 #balance
 {
 		background-color:white;
 		color:black;
-	width:1000px;
-	padding:50px;
+
 	margin-left:auto;
 	margin-right:auto;
 	margin-top:100px;
@@ -112,39 +110,34 @@ ul>li
 	
 font-size: 20px;	
 
-	text-align: center;
-	
-	padding:0px;
-	float:left;
 	list-style-type:none;
-	
+
 	float:left;
-border-right: 1px dashed #751b1b;	
+
+
 }
 li:hover
 {
 	
-	background-color: #ee0000;
+	background-color: #919191;
 	cursor:pointer;
-	
+	color:#ffffff;
+
 }
 ul
 {
 	display: inline-block;
-	
-}
-
-ul>li:first-child
-{
-border-left: 1px dashed #751b1b;	
 
 }
+
+
 ul a
 {
 	color: #ffffff;
 	text-decoration: none;
 	display:block;
-	padding:20px;
+	padding:15px;
+	
 	
 }
 
@@ -157,17 +150,18 @@ input[type=email],
 input[type=password]
 
 {
-	width:300px;
 	background-color:#efefef;
 	color:#666;
 	border: 2px solid #ddd;
-	border-radius:5px;
+	border-top-right-radius:5px;
+	border-bottom-right-radius:5px;
 	font-size:20px;
-	padding:10px;
+padding:10px;
 	box-sizing:border-box;
 	outline:none;
 	margin-top:10px;
-	
+
+
 }
 input[type=reset]:focus, 
 input[type=text]:focus, 
@@ -181,41 +175,10 @@ input[type=email]:focus
 	background-color:#e9f3e9;
 	color:#428c42;
 	
-}
-
-input[type=submit],
-input[type=reset]
-{
-
-	width:300px;
-	background-color:#36b03c;
-	font-size:20px;
-	color:white;
-	padding: 15px 10px;
-	margin-top:10px;
-	border:none;
-	border-radius:5px;
-	cursor:pointer;
-	letter-spacing:2px;
-	outline:none;
-	margin-top:20px;
-	
 	
 }
 
 
-input[type=submit]:focus,
-input[type=reset]:focus
-{
-	-webkit-box-shadow: 0px 0px 15px 5px rgba(204,204,204,0.9);
-	-moz-box-shadow: 0px 0px 10px 5px rgba(204,204,204,0.9);
-	box-shadow: 0px 0px 15px 5px rgba(204,204,204,0.9);	
-	
-}
-input[type=submit]:hover
-{
-	background-color:#37b93d;
-}
 input::-webkit-input-placeholder
 {
     color: #999;
@@ -251,7 +214,7 @@ input:focus:-ms-input-placeholder
 {
     color: #428C42;
 }
-label >input[type=text]
+.cat>input[type=text]
 {
 	width:150px;
 	font-size:15px;
@@ -260,8 +223,9 @@ label >input[type=text]
 }
 #subtitle
 {
-	background-color:#8D8D8D;
-	font-size: 40px;	
+	background-color:#828282;
+	font-size: 40px;
+	padding:10px;
 }
 input[type=date]
 {
@@ -277,17 +241,19 @@ input[type=date]
 	margin-top:10px;
 	margin-bottom:10px;
 }
-#cat
+.cat
 {
 	float:left;
-	text-align:left;
-	padding-left:10px;
-	margin-bottom:10px;
+	text-align:center;
+
+
+
+
 }
-#cattitle
+.cattitle
 {
 	font-weight:bold;
-	font-size:30px;
+
 	
 }
 #bilancePeriod
@@ -302,7 +268,7 @@ input[type=date]
 	
 	text-align: center;
 	font-size:25px;
-	width:500px;
+
 	float:left;
 font-weight:bold;
 
@@ -314,97 +280,180 @@ font-weight:bold;
 	
 font-weight:bold;
 	float:left;
-	width:500px;
+
 	font-size:25px;
 }
+
+
+
+#incomeTable  table
+{
+	border-color:green;
+	
+}
+#expenseTable  table
+{
+	border-color:red;
+	
+}
+
+
+
 table
 {
 	display: inline-block;
 	margin:20px;
 	text-align: center;
-	border:2px solid black;
+	border:6px solid black;
 	font-size: 17px;
 	font-weight:normal;
-}
+	border-radius:5px;
+
+	}
 td
 {
 	padding:20px;
-	border:2px solid black;
+	border:2px solid black !important;
+	border-width:2px;
 }
 #c
 {
 	margin-top:40px;
-	width: 1000px; 
-	height: 1000px; 
+
 	text-align:center;
 	display: inline-block;
 
 }
-#opmenu1
-{
-	background-color:#05f605;
-	text-align:center;
-	margin-left:auto;
-	margin-right:auto;
-font-size:30px;
-vertical-align: middle;
-line-height: 30px;
-padding:10px;
-}
 
-#opmenu1:hover
-{
-	background-color:#04e504;
-cursor:pointer;
+.icons {
+	float:left;
+margin-top:10px;
+
+}
+.inputx {
+	float:left;
+	
 	
 }
-#opmenu2
+input[type=submit] 
 {
-	background-color:#e80505;
+
+	
+	background-color:#37b93d;
+	font-size:20px;
+	color:white;
+	padding: 15px 10px;
+	margin-top:10px;
+	border:none;
+	border-radius:5px;
+	cursor:pointer;
+	letter-spacing:2px;
+	outline:none;
+	margin-bottom:20px;
+	
+}
+
+
+input[type=submit]:focus
+
+{
+	-webkit-box-shadow: 0px 0px 15px 5px rgba(204,204,204,0.9);
+	-moz-box-shadow: 0px 0px 10px 5px rgba(204,204,204,0.9);
+	box-shadow: 0px 0px 15px 5px rgba(204,204,204,0.9);	
+	
+}
+input[type=submit]:hover
+{
+	background-color:#37b93d;
+}
+.add>input[type=submit]:hover
+{
+	background-color:#37b93d;
+}
+.add>input[type=submit] 
+{
+
+	background-color:#36b03c;
+	
+	
+	
+}
+.abort>input[type=submit]:hover
+{
+	background-color:#ef1d1e;
+}
+.abort>input[type=submit] 
+{
+
+	background-color:#de0c0d;
+	
+	
+	
+}
+.quote
+{
 	text-align:center;
 	margin-left:auto;
 	margin-right:auto;
-padding:10px;
-vertical-align: middle;
-line-height: 30px;
-font-size:30px;
-}
 
-#opmenu2:hover
-{
-	background-color:#f70404;
-cursor:pointer;
+font-family: 'Roboto', sans-serif;
+font-size:15px;
 }
-#opmenu3
+.welcome
 {
-	background-color:#0505ee;
+	color:green;
+
+}
+.money
+{
+	width:300px;
+	height:200px;
+display:inline-block;
+
+}
+.elem
+{
+
+display:inline-block;
+padding:30px;
 	text-align:center;
-	margin-left:auto;
-	margin-right:auto;
-padding:10px;
-vertical-align: middle;
-line-height: 30px;
-font-size:30px;
+
+	
 }
 
-#opmenu3:hover
+.container-fluid
 {
-	background-color:#0404dd;
-cursor:pointer;
+	text-align:center;
 }
+nav
+{
+	padding:0px;
+	margin:0px;
+	margin-top:0px;
+	
+}
+.dates
+{
+		text-align: center;
+	font-size:25px;
 
-img
-{
-	width:30px;
-	height:30px;
+	float:left;
+font-weight:bold;
+	
 }
-#opmenu2 a
+#reglog
 {
-	text-decoration:none;
-	color:white;
+	font-size:0px;
+	
 }
-#opmenu3 a
+ #expence input[type=text]
 {
-	text-decoration:none;
-	color:white;
+	border-radius:5px;	
+
+}
+.welcomebold
+{
+	font-weight:bold;
+	font-size:40px;
+
 }
