@@ -18,7 +18,7 @@ if (isset($_POST['data']))
 	
 $date=$_POST['data'];
 $kwota=$_POST['kwota'];
-$platnosc=$_POST['przychod'];
+$przychod=$_POST['przychod'];
 if (isset($_POST['komentarz']))
 {
 $komentarz=$_POST['komentarz'];
@@ -32,7 +32,36 @@ if ($_POST['kwota']=="")
 {
 	$_SESSION['e_kwota']="Wpisz kwotę!!!";
 		$wszystko_OK= false;
+		
 }
+		if( $wszystko_OK==true)
+
+		
+		
+{
+				require_once 'database.php';	
+	
+			$query1=$db->prepare("SELECT id FROM incomes_category_assigned_to_users WHERE user_id=:logged_id AND name=:przychod");			
+			$query1->bindValue(':przychod', $przychod, PDO::PARAM_STR);
+			$query1->bindValue(':logged_id', $_SESSION['logged_id'], PDO::PARAM_INT);
+			$query1->execute();
+			
+			
+		while($r = $query1->fetch(PDO::FETCH_ASSOC)){
+            $inc_id = $r['id'];
+            }
+			
+					  $queryx=$db->prepare("INSERT INTO incomes VALUES (NULL,:logged_id,:query1,:kwota,:data,:komentarz)");
+$queryx->bindValue(':logged_id', $_SESSION['logged_id'], PDO::PARAM_INT);
+		  		$queryx->bindValue(':query1', $inc_id, PDO::PARAM_INT);
+
+		$queryx->bindValue(':kwota', $kwota, PDO::PARAM_LOB);		
+		$queryx->bindValue(':data', $date, PDO::PARAM_STR);
+		$queryx->bindValue(':komentarz', $komentarz, PDO::PARAM_STR);
+$queryx->execute();
+
+}	
+
 
 
 
@@ -96,7 +125,7 @@ if ($_POST['kwota']=="")
 													</a>
 										</li>
 										<li class="navbar-item">
-										<a  href="przegladaj_bilans.html">
+										<a  href="przegladaj_bilans.php">
 													<i class="icon-chart-line"></i>
 													Przeglądaj bilans
 													</a>
@@ -131,7 +160,11 @@ if (isset($_SESSION['e_data']))
 {
 	echo '<div class="error">'.$_SESSION['e_data'].'</div>';
 	unset($_SESSION['e_data']);
+	
+	
+
 }
+
 ?>
 						<br/>
 						<div class="cattitle col-12">Kwota</div>
@@ -152,10 +185,10 @@ if (isset($_SESSION['e_kwota']))
 						<div class="cattitle">Kategoria</div>
 						<br/>
 						<div class ="cat col-12 ">
-							<label><input type="radio" name="przychod" value="Wynagrodzenie" checked />Wynagrodzenie</label><br/>
-							<label><input type="radio" name="przychod" value="Odsetki bankowe"/>Odsetki bankowe</label>		<br/>
-							<label><input type="radio" name="przychod" value="Sprzedaż na allegro"/>Sprzedaż na allegro</label>	<br/>
-							<label><input type="radio" name="przychod" id="Other" value="Inne"/>Inne</label> 
+							<label><input type="radio" name="przychod" value="Salary" checked />Wynagrodzenie</label><br/>
+							<label><input type="radio" name="przychod" value="Interest"/>Odsetki bankowe</label>		<br/>
+							<label><input type="radio" name="przychod" value="Allegro"/>Sprzedaż na allegro</label>	<br/>
+							<label><input type="radio" name="przychod" id="Other" value="Another"/>Inne</label> 
 							
 							<?php
 if (isset($_SESSION['e_przychod']))
@@ -183,7 +216,9 @@ if (isset($_SESSION['e_przychod']))
 						</span>
 						<span class ="abort">
 							<input type="submit" value="Anuluj" />		
-						</span>					
+						</span>	
+					<div id="c" class ="col-12" >
+					</div>						
 					</form>
 				</div>
 		</div>

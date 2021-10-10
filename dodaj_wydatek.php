@@ -37,46 +37,36 @@ if( $wszystko_OK==true)
 		$query1->bindValue(':category', $category, PDO::PARAM_STR);
 		$query1->bindValue(':logged_id', $_SESSION['logged_id'], PDO::PARAM_INT);
 		$query1->execute();
-	$ile_query = $query1->fetchColumn();
+		
+		
+		while($row = $query1->fetch(PDO::FETCH_ASSOC)){
+            $exp_id = $row['id'];
+            }
 
-	if ($ile_query==0)
-	{
-			$query2 = $db->prepare("INSERT INTO expenses_category_assigned_to_users VALUES (NULL,:logged_id, :category)");
-		$query2->bindValue(':category', $category, PDO::PARAM_STR);
-		$query2->bindValue(':logged_id', $_SESSION['logged_id'], PDO::PARAM_INT);
-				$query2->execute();
-						$query1->execute();
-	}
 	
-	$expances_cat = $query1->fetch();
+
 	
 			$query3 = $db->prepare("SELECT id FROM payment_methods_assigned_to_users WHERE user_id=:logged_id AND name=:platnosc");
 		$query3->bindValue(':platnosc', $platnosc, PDO::PARAM_STR);
 		$query3->bindValue(':logged_id', $_SESSION['logged_id'], PDO::PARAM_INT);
 		
 		$query3->execute();
-	$ile_query2 = $query3->fetchColumn();
-
-		if ($ile_query2==0)
-	{
-					$query4 = $db->prepare("INSERT INTO payment_methods_assigned_to_users VALUES (NULL,:logged_id,:platnosc)");
-		$query4->bindValue(':platnosc', $platnosc, PDO::PARAM_STR);
 		
-		echo $query1;
-		$query4->bindValue(':logged_id', $_SESSION['logged_id'], PDO::PARAM_INT);
-				$query4->execute();
-						$query3->execute();
-	}
+				while($row = $query3->fetch(PDO::FETCH_ASSOC)){
+            $pay_id = $row['id'];
+            }
+
+
 	$expances_pay = $query3->fetch();
 		  $query5=$db->prepare("INSERT INTO expenses VALUES (NULL,:logged_id,:query1,:query3,:kwota,:data,:komentarz)");
 $query5->bindValue(':logged_id', $_SESSION['logged_id'], PDO::PARAM_INT);
-		  		$query5->bindValue(':query1', $expances_cat['id'], PDO::PARAM_INT);
+		  		$query5->bindValue(':query1', $exp_id, PDO::PARAM_INT);
 
-		$query5->bindValue(':query3',$expances_pay['id'], PDO::PARAM_INT);
+		$query5->bindValue(':query3',$pay_id, PDO::PARAM_INT);
 		$query5->bindValue(':kwota', $kwota, PDO::PARAM_LOB);		
 		$query5->bindValue(':data', $date, PDO::PARAM_STR);
 		$query5->bindValue(':komentarz', $komentarz, PDO::PARAM_STR);
-		$query5->execute();
+$query5->execute();
 }
 }
 
@@ -138,7 +128,7 @@ $query5->bindValue(':logged_id', $_SESSION['logged_id'], PDO::PARAM_INT);
 											</a>
 										</li>
 										<li class="navbar-item">
-											<a  href="przegladaj_bilans.html">
+											<a  href="przegladaj_bilans.php">
 												<i class="icon-chart-line"></i>
 												Przeglądaj bilans
 											</a>
@@ -174,8 +164,8 @@ if (isset($_SESSION['e_data']))
 	echo '<div class="error">'.$_SESSION['e_data'].'</div>';
 	unset($_SESSION['e_data']);
 }
-echo $expances_cat['id']. "z";
-echo $expances_pay['id']."c";
+
+
 
 ?>
 						<br/>

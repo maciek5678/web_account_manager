@@ -95,7 +95,7 @@ if (!isset($_SESSION['logged_id'])){
 							</a>
 				</li>
 				<li class="navbar-item">
-				<a href="przegladaj_bilans.html">
+				<a href="przegladaj_bilans.php">
 							<i class="icon-chart-line"></i>
 							Przeglądaj bilans
 							</a>

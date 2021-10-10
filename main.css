@@ -325,7 +325,8 @@ td
 
 	text-align:center;
 	display: inline-block;
-
+	width:1000px;
+height:1000px;
 }
 
 .icons {

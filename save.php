@@ -80,6 +80,26 @@ if (!$query) throw new Exception($query->error);
 		$query->bindValue(':password', $haslo_hash, PDO::PARAM_STR);
 		$query->bindValue(':email', $email, PDO::PARAM_STR);
 		$query->execute();
+		
+		$registrated_id=$db->prepare("SELECT id FROM users WHERE username=:username ");
+		$registrated_id->bindValue(':username', $login, PDO::PARAM_STR);
+		$registrated_id->execute();
+		
+		while($row = $registrated_id->fetch(PDO::FETCH_ASSOC)){
+            $id = $row['id'];
+            }
+		
+		
+		$query3 = $db->prepare('INSERT INTO expenses_category_assigned_to_users (user_id,name) SELECT :id, name FROM  expenses_category_default');
+		$query3->bindValue(':id', $id, PDO::PARAM_INT);
+		$query3->execute();
+		
+				$query4 = $db->prepare('INSERT INTO payment_methods_assigned_to_users (user_id,name) SELECT :id, name FROM  payment_methods_default');
+		$query4->bindValue(':id', $id, PDO::PARAM_INT);
+		$query4->execute();
+						$query4 = $db->prepare('INSERT INTO incomes_category_assigned_to_users (user_id,name) SELECT :id, name FROM  incomes_category_default');
+		$query4->bindValue(':id', $id, PDO::PARAM_INT);
+		$query4->execute();
 	}
 }else{
 	
